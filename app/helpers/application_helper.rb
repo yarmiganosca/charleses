@@ -2,7 +2,7 @@ module ApplicationHelper
   def ng_templates(path)
     base_path = "#{Rails.root}/app/views/"
 
-    Dir.glob("#{path_base}#{path}/**.ng.*").reduce([]) do |tags, template_path|
+    Dir.glob("#{base_path}#{path}/**.ng.*").reduce([]) do |tags, template_path|
       relative_path = template_path.gsub(base_path, '')
       partial_path  = relative_path.sub(/\/_/, '/')
       name_path     = partial_path.sub(/\..*$/, '')
