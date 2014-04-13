@@ -93,14 +93,14 @@ if tatiana_interview.nil?
   tatiana_interview.questioner = jeanine
   tatiana_interview.respondant = tatiana
   tatiana_interview.status = "scheduled"
-  tatiana_interview.type = "pre"
+  tatiana_interview.interview_type = "pre"
 
   tatiana_questions.each do |q|
     newQ = InterviewQuestion.where(:content => q[:content]).first
     if newQ.nil?
       newQ = InterviewQuestion.new(:content => q[:content],:response_required => q[:response_required])
       newQ.save
-      
+
       response = InterviewResponse.new(interview_question_id: newQ.id)
       tatiana_interview.interview_responses << response
     end
@@ -115,7 +115,7 @@ if rupert_interview.nil?
   rupert_interview.questioner = rupert
   rupert_interview.respondant = rupert
   rupert_interview.status = "scheduled"
-  rupert_interview.type = "pre"
+  rupert_interview.interview_type = "pre"
   
   rupert_questions.each do |q|
     newQ = InterviewQuestion.where(:content => q[:content]).first
