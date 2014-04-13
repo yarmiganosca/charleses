@@ -12,3 +12,6 @@ angular.module('charleses.services', []);
 angular.module('charleses.directives', []);
 angular.module('charleses.controllers', []);
 
+app.run(function(){
+    gapi.hangout.render('createhangout-div', { 'render': 'createhangout' });
+});
