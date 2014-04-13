@@ -6,9 +6,6 @@ class InterviewsController < ApplicationController
   
   def show
     interview = Interview.find(params[:id])
-    
-    # template = "even" if params[:id].to_i.even?
-    # template = "odd" if params[:id].to_i.odd?
     template = interview.respondant.first_name.downcase
     
     render :partial => template
