@@ -1,5 +1,5 @@
 var init = function() {
-    gapi.hangout.render('createhangout-div', { 'render': 'createhangout' });
+    // gapi.hangout.render('createhangout-div', { 'render': 'createhangout' });
 };
 
 if (window.addEventListener) {

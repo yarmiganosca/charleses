@@ -41,4 +41,6 @@ function configureApp ($stateProvider, $urlRouterProvider) {
 
 }
 
-app.config(['$stateProvider', '$urlRouterProvider', configureApp]);
+app.config(['$stateProvider', '$urlRouterProvider', configureApp]).run(function(){
+  gapi.hangout.render('createhangout-div', { 'render': 'createhangout' });
+});
