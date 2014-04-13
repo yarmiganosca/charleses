@@ -1,0 +1,6 @@
+<h2>Answer the Interview Questions</h2>
+
+<%= form_for(@interview, url: interview_path(@interview), html: { method: :put }) do |f| %>
+
+  <div><%= f.submit "Submit my answers" %></div>
+<% end %>
