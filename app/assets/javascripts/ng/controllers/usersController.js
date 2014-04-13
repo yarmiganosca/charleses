@@ -8,9 +8,9 @@ function usersController ($scope, $stateParams, $http) {
   // $scope.$watch('user', function (user) {
   //   $scope.template = user.first_name.toLowerCase();
   // })
-
   $scope.user = {
-
+  	id: 1,
+  	team:{nutritionist:"bob",endochronologist:"judy"}
   };
 }
 

@@ -1,9 +1,9 @@
 .navbar.navbar-default
   .navbar-header
-    %a.navbar-brand
+    %a.navbar-brand(href="/")
   %ul.navbar-left.nav.navbar-nav 
     %li
-      %a(ui-sref="healthcare") My Healthcare
+      %a(ui-sref='user({userId: 1})') My Advocare
     %li
       %a Visiting a Clinic
     %li
@@ -11,7 +11,7 @@
 
   %ul.navbar-right.nav.navbar-nav.mrg_r20 
     - if user_signed_in?
-      %li= link_to 'Account', edit_user_registration_path
+      %li= link_to 'Account', '/users/edit'
       %li.mrg_r20= link_to 'Logout', destroy_user_session_path, method: 'delete'
       %li.hangout.pull-right.mrg_r20.mrg_t10{:id=>"createhangout-div"} Video-Chat
     - else

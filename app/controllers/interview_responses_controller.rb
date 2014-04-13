@@ -9,7 +9,6 @@ class InterviewResponsesController < ApplicationController
     #   }
     # ]
 
-    binding.pry
     @error = OpenStruct.new
     begin
       interview_json.each do |q|

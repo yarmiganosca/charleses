@@ -2,9 +2,6 @@
 .mrg_r20{margin-right:20px !important;}
 
 .mrg_t10{margin-top:10px !important;}
-header .navbar-default {
-background-color: white;
-}
-.navbar-brand {text-indent: -99999px; background: url(../../images/advocare.png) no-repeat 20px -5px  transparent;width: 300px;}
 
-section .jumbotron h1{font-size: 3em} 
+header .navbar-default {background-color: white; } .navbar-brand {text-indent: -99999px; background: url(../../images/advocare.png) no-repeat 20px -5px  transparent;width: 300px;}
+section.container-fluid  {padding: 0px 55px }
