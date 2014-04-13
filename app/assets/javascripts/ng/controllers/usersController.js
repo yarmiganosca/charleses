@@ -7,7 +7,11 @@ function usersController ($scope, $stateParams, $http) {
   });
 
   $scope.$watch('user', function (user) {
-    $scope.user.template = user.first_name.toLowerCase();
+    if (user) {
+      $scope.templates = $scope.templates || {};
+      $scope.templates.interview = 'ng/interview_forms/' + user.first_name.toLowerCase();
+    }
+    console.log($scope.userTemplate);
   });
 }
 

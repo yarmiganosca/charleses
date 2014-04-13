@@ -29,7 +29,7 @@ function configureApp ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
   .state('user', {
-    url: '/users/:useId',
+    url: '/users/:userId',
     templateUrl: 'ng/users/home',
     controller: 'usersController'
   })
