@@ -15,7 +15,6 @@ angular.module('charleses.controllers', [])
       },
       {
         "title": "About",
-        "template": "tab/docs/pane.tpl.demo.html",
         "content": "Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade."
       }
     ];
