@@ -44,3 +44,5 @@ gem 'pry'
 gem 'pry-byebug'
 
 gem 'twitter-bootstrap-rails', git: "git@github.com:seyhunak/twitter-bootstrap-rails.git", branch: "bootstrap3"
+
+gem 'pg'
