@@ -18,7 +18,7 @@ angular.module('charleses.controllers', [
 ]);
 
 function configureApp ($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/users/1');
+  $urlRouterProvider.otherwise('/');
 
   $stateProvider
   .state('user', {
@@ -37,6 +37,10 @@ function configureApp ($stateProvider, $urlRouterProvider) {
   .state('library', {
     url: '/resources',
     templateUrl: 'ng/library'
+  })
+  .state('healthcare', {
+    url: '/healthcare',
+    templateUrl: 'ng/users/healthcare',
   });
 
 }
