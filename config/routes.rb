@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :users
   resources :interviews
   
-  get 'users/:id/interviews' => 'users#interviews' #, as: :purchase
+  get 'users/:id/interviews' => 'users#interviews'
+  match 'interview_responses' => 'interview_responses#responses', :via => [:get, :put]
 end
