@@ -3,6 +3,7 @@
   - if user_signed_in?
     .btn.btn-lg= link_to 'Account', edit_user_registration_path
     .btn.btn-lg= link_to 'Interview', interviews_path
+    .hangout{:id=>"createhangout-div"} Video-Chat
     .btn.btn-lg= link_to 'Logout', destroy_user_session_path, method: 'delete'
   - else
     .btn.btn-lg= link_to 'Login', new_user_session_path
