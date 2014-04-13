@@ -47,6 +47,7 @@ gem 'twitter-bootstrap-rails', git: "git@github.com:seyhunak/twitter-bootstrap-r
 
 gem 'pg'
 gem 'devise'
+gem 'rabl'
 
 group :development, :test do
   gem 'simplecov'
