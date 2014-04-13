@@ -19,10 +19,17 @@ angular.module('charleses.controllers', [
 
 function configureApp ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
+  $stateProvider
+  .state('home', {
+    url: '/',
+    templateUrl: 'ng/users/welcome',
+    controller: 'usersController'
+  })
+
 
   $stateProvider
   .state('user', {
-    url: '/users/:userId',
+    url: '/users/1',
     templateUrl: 'ng/users/home',
     controller: 'usersController'
   })
@@ -30,18 +37,26 @@ function configureApp ($stateProvider, $urlRouterProvider) {
     url: '/interview',
     templateUrl: 'ng/interviews/show'
   })
+  .state('user.appointment', {
+    url: '/appointment',
+    templateUrl: 'ng/appointments/show'
+  })
   .state('user.info', {
     url: '/info',
-    templateUrl: 'ng/users/info'
+    templateUrl: 'ng/info'
   })
-  .state('library', {
-    url: '/resources',
-    templateUrl: 'ng/library'
+  .state('user.library', {
+    url: '/library',
+    templateUrl: 'ng/library/show'
   })
-  .state('healthcare', {
-    url: '/healthcare',
-    templateUrl: 'ng/users/healthcare',
-  });
+  .state('user.medication', {
+    url: '/medication',
+    templateUrl: 'ng/medication/show'
+  })
+  .state('user.team', {
+    url: '/team',
+    templateUrl: 'ng/team/show'
+  })
 
 }
 

@@ -1,2 +1,12 @@
 %a(ui-sref='user.info({userId: user.id})')
 %a(ui-sref='user.interview({userId: user.id})')
+.row
+  .col-md-3
+    .list-group
+      %a.list-group-item.active(href="/users/1") My Advocare
+      %a.list-group-item(ui-sref='user.appointment({userId: 1})') Appointments
+      %a.list-group-item(ui-sref='user.medication({userId: 1})') Medications
+      %a.list-group-item(ui-sref='user.interview({userId: 1})') Interviews
+      %a.list-group-item(ui-sref='user.library({userId: 1})') Library
+      %a.list-group-item(ui-sref='user.team({userId: 1})') Team
+  %div(ui-view=true)
