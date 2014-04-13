@@ -25,7 +25,7 @@ end
 jeanine = User.where(:first_name => "Jeanine").first
 if jeanine.nil?
   jeanine = User.new(:first_name => "Jeanine")
-  jeanine.email = "jeanine.j@charleses.advocare.com"
+  jeanine.email = "janine.j@charleses.advocare.com"
   jeanine.last_name = "Jordan"
   jeanine.dob = DateTime.new(1951,2,3)
   jeanine.allergies = "None"
@@ -33,7 +33,7 @@ if jeanine.nil?
   jeanine.password = "changeme"
   jeanine.save
 else
-  jeanine.email = "jeanine.j@charleses.advocare.com"
+  jeanine.email = "janine.j@charleses.advocare.com"
   jeanine.save
 end
 
