@@ -45,6 +45,7 @@ gem 'pry-byebug'
 
 gem 'pg'
 gem 'devise'
+gem 'rabl'
 
 group :development, :test do
   gem 'simplecov'
