@@ -9,7 +9,9 @@ function usersController ($scope, $stateParams, $http) {
   $scope.$watch('user', function (user) {
     if (user) {
       $scope.templates = $scope.templates || {};
+
       $scope.templates.interview = 'ng/interview_forms/' + user.first_name.toLowerCase();
+      $scope.templates.library = 'ng/library/' + user.first_name.toLowerCase();
     }
     console.log($scope.userTemplate);
   });
