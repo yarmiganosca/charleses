@@ -1,0 +1,20 @@
+%h2 Interview Questions
+%form
+  %h4 Does your rash look like any of these?
+  %input(type='checkbox' ng-model='questions.rashes.lyme_disease')
+  %input(type='checkbox' ng-model='questions.rashes.measles')
+  %input(type='checkbox' ng-model='questions.rashes.necrotizing_fasciitis')
+  %input(type='checkbox' ng-model='questions.rashes.qr_code')
+
+  %h4 Where was your last trip?
+  %input(type='text' ng-model='questions.trip' placeholder='e.g. Burma')
+
+  %h4 Have you been in an area where you could have been exposed to ticks?
+  %input(type='radio' ng-model='questions.exposed' value='true') Yes
+  %input(type='radio' ng-model='questions.exposed' value='false') No
+
+  %h4 Have you experienced any difficulty moving?
+  %input(type='radio' ng-model='questions.difficulty' value='true') Yes
+  %input(type='radio' ng-model='questions.difficulty' value='false') No
+
+  %input.btn.btn-success(type='submit' value='Submit')
