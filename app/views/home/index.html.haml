@@ -1,16 +1,3 @@
 %div(ng-app="charleses")
-  %section.container(ng-controller="navController")
-    .jumbotron
-    %h1 What brings you to the clinic today?
-    %p
-      %a.btn.btn-primary.btn-lg(role="button" href="routine") Routine Care
-      %a.btn.btn-primary.btn-lg(role="button" href="issue") Specific Issue
-      %a.btn.btn-primary.btn-lg(role="button" href="unsure") Unsure
-
-    %div
-      %h2 What is Follow Through Healthcare?
-    %div(ng-model="tabs.activeTab" bs-tabs="tabs")
-
   = ng_templates 'ng'
-
   %div(ui-view=true)

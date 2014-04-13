@@ -6,7 +6,6 @@ var app = angular.module('charleses',
   [ 'charleses.services'
   , 'charleses.controllers'
   , 'mgcrea.ngStrap'
-  , 'ngResource'
   , 'ui.router'
 ]);
 
@@ -14,24 +13,29 @@ angular.module('charleses.services',
   [ 'charleses.user'
 ]);
 
-angular.module('charleses.controllers',
-  [ 'charleses.navController'
-  , 'charleses.interviewsController'
-]);
+angular.module('charleses.controllers', []);
 
 function configureApp ($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/advocare');
+  $urlRouterProvider.otherwise('/');
+
   $stateProvider
-  .state('main', {
-    url: '/advocare',
-    templateUrl: 'ng/navigation'
+  .state('user', {
+    url: '/users/:userId',
+    templateUrl: 'ng/users/home'
   })
-  .state('main.interview', {
-    url: '/advocare/interviews/:patient',
-    templateUrl: function (stateParams) {
-      return 'ng/interviews/' + stateParams.patient;
-    }
+  .state('user.interview', {
+    url: '/interview',
+    templateUrl: 'ng/interviews/show'
+  })
+  .state('user.info', {
+    url: '/info',
+    templateUrl: 'ng/users/info'
+  })
+  .state('library', {
+    url: '/resources',
+    templateUrl: 'ng/library'
   });
+
 }
 
 app.config(['$stateProvider', '$urlRouterProvider', configureApp]);

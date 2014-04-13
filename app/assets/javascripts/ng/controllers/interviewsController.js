@@ -1,8 +1,10 @@
 'use strict';
 
-function interviewsController ($scope, $routeParams) {
-  $scope.interview = $routeParams.
+function interviewsController ($scope, $stateParams) {
+  $http.get('/users/' + $stateParams.userId + '.json').success(function (data) {
+    $scope.user = data.user;
+  });
 };
 
-angular.module('charleses.interviewsController')
-  .controller('interviewsController', ['$scope', '$routeParams', interviewsController]);
+angular.module('charleses.controllers')
+  .controller('interviewsController', ['$scope', '$stateParams', interviewsController]);
