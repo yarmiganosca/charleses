@@ -2,12 +2,8 @@
 	<head>
 	<title>Advocare | Follow Through Healthcare</title>
 
-		<link rel="stylesheet" href="../../../vendor/assets/components/bootstrap/dist/css/bootstrap.css">
+
 		<link rel="stylesheet" href="css/style.css">
-		
-		<script src="../../../vendor/assets/components/angular/angular.min.js"></script>
-		<script src="../../../vendor/assets/components/angular-strap/dist/angular-strap.min.js"></script>
-		
 		<script src="../wireframes/js/app.js"></script>
 		<script src="../wireframes/js/controls.js"></script>
 		<script src="../wireframes/js/directives.js"></script>
@@ -52,6 +48,8 @@
 			      </form>
 			      <ul class="nav navbar-nav navbar-right">
 
+
+
 			      	<li><a href="#">Advocare Community</a></li>
 
 			        <li><a href="#">My Health</a></li>
@@ -71,18 +69,22 @@
 			</nav>
 		</header>
 
+
 		<section class="container" ng-controller="MyCtrl1">
 			<div class="jumbotron ">
 			  <h1>What brings you to the clinic today?</h1>
 
 			  <p><a class="btn btn-primary btn-lg" role="button">Routine Care</a><a class="btn btn-primary btn-lg mrg_l20" role="button">Specific Issue</a><a class="btn btn-primary btn-lg mrg_l20" role="button">Unsure</a></p>
+			</div><div ng-model="tabs.activeTab" bs-tabs="tabs">
 			</div>
 			<div>
 				<h2>What is Follow Through Healthcare?</h2>
 			</div>
 
+
 			<div ng-model="tabs.activeTab" bs-tabs="tabs">
 			</div>
+
 
 		</section>
 
