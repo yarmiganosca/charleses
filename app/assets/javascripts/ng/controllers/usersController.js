@@ -1,7 +1,7 @@
 'use strict';
 
 function usersController ($scope, $stateParams, $http) {
-  $http.get('/users/' + $stateParams.userId + '.json').success(function (data, status, config, headers) {
+  $http.get('/users/' + $stateParams.userId + '.json').success(function (data) {
     $scope.user = data;
   });
 
