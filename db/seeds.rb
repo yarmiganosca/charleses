@@ -43,7 +43,7 @@ if tatiana.nil?
   tatiana.save
 end
 
-# Question to Tatiana
+# Questions to Tatiana
 tatiana_questions = [
   {
     content: "In the past 3 months have you have wounds that are slow to heal?",
@@ -67,14 +67,7 @@ tatiana_questions = [
   }
 ]
 
-tatiana_questions.each do |q|
-  newQ = InterviewQuestion.where(:content => q[:content]).first
-  if newQ.nil?
-    newQ = InterviewQuestion.new(:content => q[:content],:response_required => q[:response_required])
-    newQ.save
-  end
-end
-
+# Questions to Rupert
 rupert_questions = [
   {
     content: "Have you been in contact with extra-terrestrial life?",
@@ -94,10 +87,46 @@ rupert_questions = [
   }
 ]
 
-rupert_questions.each do |q|
-  newQ = InterviewQuestion.where(:content => q[:content]).first
-  if newQ.nil?
-    newQ = InterviewQuestion.new(:content => q[:content],:response_required => q[:response_required])
-    newQ.save
+tatiana_interview = Interview.where(:questioner_id => jeanine.id, :respondant_id => tatiana.id).first
+if tatiana_interview.nil?
+  tatiana_interview = Interview.new()
+  tatiana_interview.questioner = jeanine
+  tatiana_interview.respondant = tatiana
+  tatiana_interview.status = "scheduled"
+  tatiana_interview.type = "pre"
+
+  tatiana_questions.each do |q|
+    newQ = InterviewQuestion.where(:content => q[:content]).first
+    if newQ.nil?
+      newQ = InterviewQuestion.new(:content => q[:content],:response_required => q[:response_required])
+      newQ.save
+      
+      response = InterviewResponse.new(interview_question_id: newQ.id)
+      tatiana_interview.interview_responses << response
+    end
   end
+
+  tatiana_interview.save
+end
+
+rupert_interview = Interview.where(:questioner_id => rupert.id, :respondant_id => rupert.id).first
+if rupert_interview.nil?
+  rupert_interview = Interview.new()
+  rupert_interview.questioner = rupert
+  rupert_interview.respondant = rupert
+  rupert_interview.status = "scheduled"
+  rupert_interview.type = "pre"
+  
+  rupert_questions.each do |q|
+    newQ = InterviewQuestion.where(:content => q[:content]).first
+    if newQ.nil?
+      newQ = InterviewQuestion.new(:content => q[:content],:response_required => q[:response_required])
+      newQ.save
+
+      response = InterviewResponse.new(interview_question_id: newQ.id)
+      rupert_interview.interview_responses << response
+    end
+  end
+
+  rupert_interview.save
 end
