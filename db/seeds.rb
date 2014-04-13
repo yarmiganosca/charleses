@@ -5,3 +5,99 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Users
+rupert = User.where(:first_name => "Rupert").first
+if rupert.nil?
+  rupert = User.new(:first_name => "Rupert")
+  rupert.email = "rupert.murdock@charleses.advocate.com"
+  rupert.last_name = "Murdock"
+  rupert.dob = DateTime.new(1931,2,3)
+  rupert.allergies = "None"
+  rupert.current_meds = "None"
+  rupert.password = "changeme"
+  rupert.save
+end
+
+jeanine = User.where(:first_name => "Jeanine").first
+if jeanine.nil?
+  jeanine = User.new(:first_name => "Jeanine")
+  jeanine.email = "jeanine.jordan@charleses.advocate.com"
+  jeanine.last_name = "Jordan"
+  jeanine.dob = DateTime.new(1951,2,3)
+  jeanine.allergies = "None"
+  jeanine.current_meds = "None"
+  jeanine.password = "changeme"
+  jeanine.save
+end
+
+tatiana = User.where(:first_name => "Tatiana").first
+if tatiana.nil?
+  tatiana = User.new(:first_name => "Tatiana")
+  tatiana.email = "tatiana.sharapova@charleses.advocate.com"
+  tatiana.last_name = "sharapova"
+  tatiana.dob = DateTime.new(1948,2,3)
+  tatiana.allergies = "None"
+  tatiana.current_meds = "None"
+  tatiana.password = "changeme"
+  tatiana.save
+end
+
+# Question to Tatiana
+tatiana_questions = [
+  {
+    content: "In the past 3 months have you have wounds that are slow to heal?",
+    response_required: true
+  },
+  {
+    content: "In the past 3 months have you experienced low Blood Sugar episodes?",
+    response_required: true
+  },
+  {
+    content: "In the past 3 months have have you felt stressed or ill?",
+    response_required: true
+  },
+  {
+    content: "How are you feeling [1-10] about your control?",
+    response_required: true
+  },
+  {
+    content: "Are you taking your meds as perscribed?",
+    response_required: true
+  }
+]
+
+tatiana_questions.each do |q|
+  newQ = InterviewQuestion.where(:content => q[:content]).first
+  if newQ.nil?
+    newQ = InterviewQuestion.new(:content => q[:content],:response_required => q[:response_required])
+    newQ.save
+  end
+end
+
+rupert_questions = [
+  {
+    content: "Have you been in contact with extra-terrestrial life?",
+    response_required: true
+  },
+  {
+    content: "Where was your last trip?",
+    response_required: true
+  },
+  {
+    content: "Have you been in an area where you could have been exposed to ticks?",
+    response_required: true
+  },
+  {
+    content: "How are you feeling [1-10] today?",
+    response_required: true
+  }
+]
+
+rupert_questions.each do |q|
+  newQ = InterviewQuestion.where(:content => q[:content]).first
+  if newQ.nil?
+    newQ = InterviewQuestion.new(:content => q[:content],:response_required => q[:response_required])
+    newQ.save
+  end
+end
