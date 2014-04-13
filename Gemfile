@@ -47,6 +47,7 @@ gem 'pg'
 gem 'devise'
 gem 'rabl'
 gem 'oj'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'simplecov'
