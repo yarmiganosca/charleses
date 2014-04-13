@@ -2,26 +2,29 @@
 
 
 // Declare app level module which depends on filters, and services
-var app = angular.module('charleses',
-  [ 'charleses.services'
-  , 'charleses.controllers'
-  , 'mgcrea.ngStrap'
-  , 'ui.router'
+var app = angular.module('charleses', [
+  'charleses.services',
+  'charleses.controllers',
+  'mgcrea.ngStrap',
+  'ui.router'
 ]);
 
-angular.module('charleses.services',
-  [ 'charleses.user'
+angular.module('charleses.services', [
+  'charleses.user'
 ]);
 
-angular.module('charleses.controllers', []);
+angular.module('charleses.controllers', [
+  'charleses.usersController'
+]);
 
 function configureApp ($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/users/1');
 
   $stateProvider
   .state('user', {
     url: '/users/:userId',
-    templateUrl: 'ng/users/home'
+    templateUrl: 'ng/users/home',
+    controller: 'usersController'
   })
   .state('user.interview', {
     url: '/interview',
