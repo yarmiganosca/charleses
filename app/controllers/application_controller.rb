@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(resource)
-    "/#/users/#{User.find_by_email(params[:user][:email]).id}/home"
+    "/#/users/#{User.find_by_email(params[:user][:email]).id}"
   end
 
   def record_user_email
