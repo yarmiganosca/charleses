@@ -8,8 +8,8 @@ development:
   encoding: utf8
   database: charleses_dev
   host: localhost
-  username: poi
-  password: poi
+  username: root
+  password:
   pool: 5
   timeout: 5000
 
@@ -21,8 +21,8 @@ test:
   encoding: utf8
   database: charleses_test
   host: localhost
-  username: poi
-  password: poi
+  username: root
+  password:
   pool: 5
   timeout: 5000
 
@@ -31,7 +31,7 @@ production:
   encoding: utf8
   database: charleses
   host: localhost
-  username: poi
-  password: poi
+  username: root
+  password:
   pool: 5
   timeout: 5000
