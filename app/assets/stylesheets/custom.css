@@ -6,3 +6,10 @@
 header .navbar-default {background-color: white; } .navbar-brand {text-indent: -99999px; background: url(../../images/advocare.png) no-repeat 20px -5px  transparent;width: 300px;}
 section.container-fluid  {padding: 0px 55px }
 #calendarTitle{display: none;}
+
+
+.lyme_disease { background:url('../images/lyme_disease_rash.jpeg') no-repeat top left transparent}
+.measles { background:url('../images/measles_rash.jpg') no-repeat top left transparent}
+.nf { background:url('../images/necrotizing_fasciitis.jpeg') no-repeat top left transparent}
+.qr{ background:url('../images/qr_code_rash.jpeg') no-repeat top left transparent}
+.img-thumbnail {min-width:140px; min-height:140px;}

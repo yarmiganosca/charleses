@@ -1,14 +1,20 @@
 %h2 Interview Questions
 %form.form-horiontal(role='form')
   %h4 Does your rash look like any of these?
-  %input(type='checkbox' ng-model='questions.rashes.lyme_disease')
-  %input(type='checkbox' ng-model='questions.rashes.measles')
-  %input(type='checkbox' ng-model='questions.rashes.necrotizing_fasciitis')
-  %input(type='checkbox' ng-model='questions.rashes.qr_code')
+  .form-group.col-md-12
+    %input(type='checkbox' name="lyme" ng-model='questions.rashes')
+    %label.lyme_disease.img-thumbnail(for="lyme")
+    %input(type='checkbox' name="measles" ng-model='questions.rashes')
+    %label.measles.img-thumbnail(for="measles")
+    %input(type='checkbox' name="nf" ng-model='questions.rashes')
+    %label.nf.img-thumbnail(for="nf")
+    %input(type='checkbox' name="qr" ng-model='questions.rashes')
+    %label.qr.img-thumbnail(for="qr")
+  
 
-  .form-group
-    %label.control-label.col-sm-2(for='trip') Where was your last trip?
-    .col-sm-7
+  .form-group.col-md-12
+    %h4(for='trip') Where was your last trip?
+    %div
       %input.form-control#trip(type='text' ng-model='questions.trip' placeholder='e.g. Burma')
 
 
