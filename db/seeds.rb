@@ -10,36 +10,45 @@
 rupert = User.where(:first_name => "Rupert").first
 if rupert.nil?
   rupert = User.new(:first_name => "Rupert")
-  rupert.email = "rupert.murdock@charleses.advocate.com"
+  rupert.email = "rupert.murdock@charleses.advocare.com"
   rupert.last_name = "Murdock"
   rupert.dob = DateTime.new(1931,2,3)
   rupert.allergies = "None"
   rupert.current_meds = "None"
   rupert.password = "changeme"
   rupert.save
+else
+  rupert.email = "rupert.murdock@charleses.advocare.com"
+  rupert.save
 end
 
 jeanine = User.where(:first_name => "Jeanine").first
 if jeanine.nil?
   jeanine = User.new(:first_name => "Jeanine")
-  jeanine.email = "jeanine.jordan@charleses.advocate.com"
+  jeanine.email = "jeanine.jordan@charleses.advocare.com"
   jeanine.last_name = "Jordan"
   jeanine.dob = DateTime.new(1951,2,3)
   jeanine.allergies = "None"
   jeanine.current_meds = "None"
   jeanine.password = "changeme"
   jeanine.save
+else
+  jeanine.email = "jeanine.jordan@charleses.advocare.com"
+  jeanine.save
 end
 
 tatiana = User.where(:first_name => "Tatiana").first
 if tatiana.nil?
   tatiana = User.new(:first_name => "Tatiana")
-  tatiana.email = "tatiana.sharapova@charleses.advocate.com"
+  tatiana.email = "tatiana.sharapova@charleses.advocare.com"
   tatiana.last_name = "sharapova"
   tatiana.dob = DateTime.new(1948,2,3)
   tatiana.allergies = "None"
   tatiana.current_meds = "None"
   tatiana.password = "changeme"
+  tatiana.save
+else
+  tatiana.email = "tatiana.sharapova@charleses.advocare.com"
   tatiana.save
 end
 

@@ -3,4 +3,17 @@ class InterviewsController < ApplicationController
   
   def index
   end
+  
+  def show
+    interview = Interview.find(params[:id])
+    template = interview.respondant.first_name.downcase
+    
+    render :partial => template
+  end
+  
+  def edit
+    @interview = Interview.find(params[:id])
+    
+    render :partial => "edit"
+  end
 end

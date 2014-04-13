@@ -1,3 +1,9 @@
-%ul.nav
-  %li= link_to 'Home', root_path
-  = render 'layouts/navigation_links'
+%section
+  .btn.btn-lg= link_to 'Home', root_path
+  - if user_signed_in?
+    .btn.btn-lg= link_to 'Account', edit_user_registration_path
+    .btn.btn-lg= link_to 'Interview', interviews_path
+    .btn.btn-lg= link_to 'Logout', destroy_user_session_path, method: 'delete'
+  - else
+    .btn.btn-lg= link_to 'Login', new_user_session_path
+    .btn.btn-lg= link_to 'Sign Up', new_user_registration_path
