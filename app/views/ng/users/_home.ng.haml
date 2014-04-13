@@ -3,8 +3,9 @@
     .list-group
       %a.list-group-item.active(ui-sref='user({userId: user.id})') My Advocare
       %a.list-group-item(ui-sref='user.appointment({userId: user.id})') Appointments
-      %a.list-group-item(ui-sref='user.medication({userId: user.id})') Medications
+      %a.list-group-item(ui-sref='user.medication({userId: user.id})') Journal
       %a.list-group-item(ui-sref='user.interview({userId: user.id})') Interviews
       %a.list-group-item(ui-sref='user.library({userId: user.id})') Library
       %a.list-group-item(ui-sref='user.team({userId: user.id})') Team
-  %div(ui-view=true)
+  %div.col-md-9(ui-view=true)
+  

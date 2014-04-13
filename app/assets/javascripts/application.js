@@ -4,5 +4,4 @@
 //= require angular-ui-router/release/angular-ui-router.js
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-calendar/js/calendar.js
 //= require_tree .
