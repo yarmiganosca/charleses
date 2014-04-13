@@ -43,7 +43,11 @@ gem 'andand'
 gem 'pry'
 gem 'pry-byebug'
 
-gem 'twitter-bootstrap-rails', git: "git@github.com:seyhunak/twitter-bootstrap-rails.git", branch: "bootstrap3"
-
 gem 'pg'
 gem 'devise'
+
+group :development, :test do
+  gem 'simplecov'
+  gem 'rspec'
+  gem 'rspec-rails'
+end
